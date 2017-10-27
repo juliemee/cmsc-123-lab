@@ -9,8 +9,9 @@ class LinkedList<E> implements Collection<E> {
  }
 
  // E, int -> boolean
- // returns true if this item is successfully added to the linkedlist or to the indicated index
- public boolean add(E item, int index) {
+ // returns true if this item is successfully added to the linkedlist or to the indicated indexoo
+ 
+ public boolean addFirst(E item, int index){
   Node newNode = new Node(item, head);
 
   if (this.size == 0 || index == 0) {
@@ -18,7 +19,10 @@ class LinkedList<E> implements Collection<E> {
    this.size++;
    return true;
   }
-
+  return false;
+ }
+ 
+ public boolean add(E item, int index) {
   Node currentNode = this.head;
   Node prevNode = null;
   
@@ -39,6 +43,8 @@ class LinkedList<E> implements Collection<E> {
  // int -> boolean
  // returns true if this item is successfully removed from the list
  public boolean remove(int index) {
+   if (index > this.size)
+     return false;
   if (this.size == 0)
    return false;
 
