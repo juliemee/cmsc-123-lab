@@ -1,0 +1,49 @@
+import junit.framework.TestCase; // i hope this works
+
+public class IteratorTester extends TestCase {
+  
+ public void testAddFirst() {
+  LinkedList<String> list = new LinkedList<String>();
+  assertEquals(true, list.add("Hat", 0));
+ }
+ 
+ public void testAdd() {
+  LinkedList<String> list = new LinkedList<String>();
+  assertEquals(true, list.add("Hat", 0));
+  assertEquals(true, list.add("Pumpkin", 1));
+  assertEquals(true, list.add("Spice", 1));
+  assertEquals(false, list.add("Lollipop", 5));
+ }
+
+ public void testRemove() {
+  LinkedList<String> list = new LinkedList<String>();
+
+  list.add("Hat", 0);
+  list.add("Pumpkin", 1);
+  list.add("Lollipop", 2);
+  assertEquals(true, list.remove(2));
+ }
+
+ public void testHasNext() {
+  LinkedList<String> list = new LinkedList<String>();
+
+  list.add("Bikini", 0);
+  list.add("Laptop", 1);
+  list.add("Honey", 2);
+
+  @SuppressWarnings("unchecked")
+  Iterator i = list.iterator();
+
+  assertEquals(true, i.hasNext());
+ }
+
+ public void testNext() {
+  LinkedList<String> list = new LinkedList<String>();
+
+  @SuppressWarnings("unchecked")
+  Iterator i = list.iterator();
+
+  while (i.hasNext())
+   System.out.println(i.next() + "--");
+ }
+}
