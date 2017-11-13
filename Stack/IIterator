@@ -1,0 +1,4 @@
+public interface IIterator<Item>{
+  boolean hasNext();
+  Item next();
+}
