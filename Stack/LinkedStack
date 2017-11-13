@@ -62,32 +62,6 @@ class LinkedStack <Item> implements Stack <Item>
   {
     return this.size;
   }
- 
-  //Iterator for traversing stack items
-  public Iterator<Item> iterator()
-  {
-    return new LinkedStackIterator();
-  }
- 
-  //inner class to implement iterator interface
-  private class LinkedStackIterator implements Iterator <Item>
-  {
-    private int i = size;
-    private Node first = head; //the first node
- 
-    public boolean hasNext()
-    {
-      return (i > 0);
-    }
- 
-    public Item next()
-    {
-      Item item = first.item;
-      first = first.next;
-      i--;
-      return item;
-    }
- 
     
  // -> Iterator<E>
  // returns an instance of the LinkedListIterator.
